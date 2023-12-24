@@ -45,7 +45,7 @@
 | XIAO RP2040         |    2 | - https://akizukidenshi.com/catalog/g/gM-17044/ <br>- https://www.switch-science.com/products/7634 <br>- https://www.marutsu.co.jp/pc/i/2229736/ <br>- https://talpkeyboard.net/items/63534f58f5197322fceb6487 |
 | ハウジング          |   48 | - https://ja.aliexpress.com/item/1005005724051113.html <br>- https://www.amazon.co.jp/dp/B0C9WJQ45N?th=1 |
 | プランジャー        |   48 | - https://ja.aliexpress.com/item/1005005721976294.html <br>- https://www.amazon.co.jp/dp/B0C9WF8NQQ?th=1 |
-| ラバーシート        |   48 | - https://ja.aliexpress.com/item/1005005721050116.html <br>- https://www.amazon.co.jp/dp/B0C9WK97GQ/?th=1 |
+| ラバーシート        |   48 | - https://ja.aliexpress.com/item/1005005721050116.html <br>- https://www.amazon.co.jp/dp/B0C9WK97GQ/?th=1 <br>- https://btoshop.jp/products/adelcpru |
 | キーキャップ        |   48 | MX 互換のもの |
 | USB C to C ケーブル |    1 | 左右通信用 |
 | USB C ケーブル      |    1 | PC 接続用  |
