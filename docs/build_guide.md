@@ -4,6 +4,11 @@
 
 
 - [Let's EC Build Guide](#lets-ec-build-guide)
+  - [部品](#部品)
+    - [キット同封品](#キット同封品)
+    - [その他必要なもの](#その他必要なもの)
+  - [ハンダ付け](#ハンダ付け)
+  - [組み立て](#組み立て)
   - [Firmware](#firmware)
   - [左右通信用 USB 接続](#左右通信用-usb-接続)
     - [キーマップ変更](#キーマップ変更)
@@ -12,14 +17,82 @@
   - [ストレージとしてマウントさせないようにするには](#ストレージとしてマウントさせないようにするには)
 
 
+## 部品
+### キット同封品
+
+| 品目                    | 数量 | 備考 |
+|-------------------------|------|------|
+| PCB                     |    2 |      |
+| トッププレート          |    2 |      |
+| USB Type C レセプタクル |    2 |      |
+| 抵抗 100kΩ              |   14 |      |
+| 抵抗 1kΩ                |    2 |      |
+| コンデンサー 100nF      |    4 |      |
+| コンデンサー 220pF      |    2 |      |
+| マルチプレクサ          |    2 |      |
+| オペアンプ              |    2 |      |
+| コニカルスプリング      |   48 |      |
+| ネジ                    |    8 |      |
+| スペーサー              |    8 |      |
+| ゴム足                  |    8 |      |
+
+
+### その他必要なもの
+
+| 品目                | 数量 | 備考       |
+|---------------------|------|------------|
+| 3D プリントケース   |    2 | [モデルデータ](/3d_model/lets_ec_tray.stl)。業者に発注 or ご自身で3Dプリントしてください。写真は JLCPCB で 9000R レジンで印刷したものです。 |
+| XIAO RP2040         |    2 | - https://akizukidenshi.com/catalog/g/gM-17044/ <br>- https://www.switch-science.com/products/7634 <br>- https://www.marutsu.co.jp/pc/i/2229736/ <br>- https://talpkeyboard.net/items/63534f58f5197322fceb6487 |
+| ハウジング          |   48 | - https://ja.aliexpress.com/item/1005005724051113.html <br>- https://www.amazon.co.jp/dp/B0C9WJQ45N?th=1 |
+| プランジャー        |   48 | - https://ja.aliexpress.com/item/1005005721976294.html <br>- https://www.amazon.co.jp/dp/B0C9WF8NQQ?th=1 |
+| ラバーシート        |   48 | - https://ja.aliexpress.com/item/1005005721050116.html <br>- https://www.amazon.co.jp/dp/B0C9WK97GQ/?th=1 |
+| キーキャップ        |   48 | MX 互換のもの |
+| USB C to C ケーブル |    1 | 左右通信用 |
+| USB C ケーブル      |    1 | PC 接続用  |
+
+## ハンダ付け
+
+| 基板上の印字   | 対応部品         |
+|----------------|------------------|
+| R1~R7          | 100kΩ            |
+| R8             | 1kΩ              |
+| C1~C2          | 100nF            |
+| C3             | 220pF            |
+| U1             | XIAO RP2040      |
+| U2             | マルチプレクサ   |
+| U3             | オペアンプ       |
+| なし(基板左上) | USB レセプタクル |
+
+抵抗とコンデンサーの向きの指定はありません。マルチプレクサ、オペアンプは基板に書かれている小さな丸と IC に書かれている丸(または丸いくぼみ)が同じ向きになるようにはんだ付けしてください。
+
+ハンダ付けが終わると下図のようになります。
+
+![はんだづけ](img/solder.png)
+
+
+## 組み立て
+
+
+- トッププレートにスペーサーをネジ止めします。
+- ハウジングをトッププレートにはめ、プランジャーをハウジングにはめていきます。
+- ラバーシートをかぶせ、コニカルスプリングを置きます
+- 基板を被せます
+- 最後に印刷した3Dプリントケースをかぶせネジを止め、ゴム足を貼り付けたら完成です。
+
+
+![トッププレート](./img/top_plate.png)
+
+![ラバーシート](./img/rubber_sheet.png)
+
+![基板](img/solder.png)
+
+![底面](./img/bottom.png)
 
 
 ## Firmware
 
 XIAO RP2040 用の CircuitPython を[ダウンロード](https://circuitpython.org/board/seeeduino_xiao_rp2040/)します。
 (動作確認は [version 8.2.9](https://adafruit-circuit-python.s3.amazonaws.com/bin/seeeduino_xiao_rp2040/en_US/adafruit-circuitpython-seeeduino_xiao_rp2040-en_US-8.2.9.uf2) で行いました。)
-
-
 
 bootloader mode で起動し、ダウンロードした `uf2` ファイルをコピーします。手順は公式 doc を参照してください。
 - bootloader mode への入り方
